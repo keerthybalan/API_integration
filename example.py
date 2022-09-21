@@ -8,8 +8,8 @@ from bigquery_functions import (query,
                                 delete_table)
 
 # Initialize google environment and other variables
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "qntq-recruitment-3ce2719bea9c.json"
-project_name = "qntq-recruitment"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "credentials.json"
+project_name = "project_name"
 dataset_name = "data"
 
 # DEMO: To create a table
