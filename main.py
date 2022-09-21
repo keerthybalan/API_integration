@@ -13,13 +13,13 @@ from bigquery_functions import (query,
                                 delete_table)
 
 # Initialize google environment and other variables
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "qntq-recruitment-3ce2719bea9c.json"
-project_name = "qntq-recruitment"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "credentials.json"
+project_name = "project_name"
 dataset_name = "data"
 # For api layer
 payload = {}
 headers = {
-    "apikey": "75KqFpjG8FAmPxhmN73oYJhUfryNmjN9"
+    "apikey": "apikey"
 }
 
 
@@ -77,7 +77,7 @@ def date_today():
 
 
 rates_to_upload = get_rates(base='EUR', start_date='2022-01-01', end_date='2022-05-31')
-delete_table('qntq-recruitment.data.de_currency_rates')
+delete_table('project_name.data.de_currency_rates')
 rates_table = create_table_gcp("de_currency_rates", rates_to_upload)
 sleep(10)  # Sleep to prevent 404 error from batch_upload
 batch_upload(rates_table, rates_to_upload.to_dict(orient='records'))
